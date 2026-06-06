@@ -109,7 +109,7 @@ function createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfU
   const flagImg = flagURL ? '<img src="' + flagURL + '" class="flag-icon">' : '';
   const cigasLink = '<p>📦 <a href="https://cigas-box.fz-juelich.de/facility/' + nfObjectID + '" target="_blank">Instruments</a></p>';
   return '<div style="font-family: sans-serif; min-width: 220px;"><div style="font-size: 16px; font-weight: bold; color: #2c3e50;">' + name + '</div><div style="font-size: 13px; color: #555;"><span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span></div><div style="margin: 6px 0;">' + instFormatted + '<br>' + flagImg + country + '</div><hr><div class="links">' + nfLink + labellingLink + dataLink + cigasLink + '</div></div>';
-}
+  }
 function createMarker(lng, lat, name, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID, typeLabel, useIcon) {
   if (useIcon === undefined) useIcon = false;
   const popupContent = createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID);
