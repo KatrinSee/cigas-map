@@ -1,4 +1,3 @@
-(function() {
 const markers = [
 ["Chambre de simulation atmosphérique à irradiation naturelle d'Orléans (HELIOS)", "Atmospheric simulation chamber", 47.838, 1.944, "uy77", "https://nflabelling.actris.eu/facility/44", "France", "https://helios-cnrs.org/", "French National Centre for Scientific Research (CNRS)\nUniversity of Orléans", 7],
 ["Multiphase Atmospheric Simulation Chamber (CESAM)", "Atmospheric simulation chamber", 48.789, 2.444, "vkyl", "https://nflabelling.actris.eu/facility/43", "France", "https://cesam.cnrs.fr/", "French National Centre for Scientific Research (CNRS)\nParis-Est Créteil University (UPEC)", 8],
@@ -108,9 +107,8 @@ function createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfU
   }
   const instFormatted = hostingInst.replace(/\n/g, '<br>');
   const flagImg = flagURL ? '<img src="' + flagURL + '" class="flag-icon">' : '';
-  const cigasLink = '<p>📦 <a href="https://cigas-box.fz-juelich.de/facility/' + nfObjectID + '" target="_blank">Instruments</a></p>';
-  return '<div style="font-family: sans-serif; min-width: 220px;"><div style="font-size: 16px; font-weight: bold; color: #2c3e50;">' + name + '</div><div style="font-size: 13px; color: #555;"><span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span></div><div style="margin: 6px 0;">' + instFormatted + '<br>' + flagImg + country + '</div><hr><div class="links">' + nfLink + labellingLink + dataLink + cigasLink + '</div></div>';
-  }
+  return '<div style="font-family: sans-serif; min-width: 220px;"><div style="font-size: 16px; font-weight: bold; color: #2c3e50;">' + name + '</div><div style="font-size: 13px; color: #555;"><span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span></div><div style="margin: 6px 0;">' + instFormatted + '<br>' + flagImg + country + '</div><hr><div class="links">' + nfLink + labellingLink + dataLink + '</div></div>';
+}
 function createMarker(lng, lat, name, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID, typeLabel, useIcon) {
   if (useIcon === undefined) useIcon = false;
   const popupContent = createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID);
@@ -146,7 +144,7 @@ function updateMarkers(useIcon) {
   map.addLayer(ObsPlat);
   map.addLayer(CentralFacility);
 }
-const map = L.map('cigas-map', {center: [50, 10], zoom: 4, fullscreenControl: true});
+const map = L.map('map', {center: [50, 10], zoom: 4, fullscreenControl: true});
 const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(map);
 const osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'});
 const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
@@ -183,5 +181,3 @@ map.on('exitFullscreen', function() {
   map.removeControl(legend);
 });
 updateMarkers(false);
-document.getElementById('map') && (document.getElementById('map').style.display = 'none');
-})();
