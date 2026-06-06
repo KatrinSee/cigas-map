@@ -1,3 +1,4 @@
+(function() {
 const markers = [
 ["Chambre de simulation atmosphérique à irradiation naturelle d'Orléans (HELIOS)", "Atmospheric simulation chamber", 47.838, 1.944, "uy77", "https://nflabelling.actris.eu/facility/44", "France", "https://helios-cnrs.org/", "French National Centre for Scientific Research (CNRS)\nUniversity of Orléans", 7],
 ["Multiphase Atmospheric Simulation Chamber (CESAM)", "Atmospheric simulation chamber", 48.789, 2.444, "vkyl", "https://nflabelling.actris.eu/facility/43", "France", "https://cesam.cnrs.fr/", "French National Centre for Scientific Research (CNRS)\nParis-Est Créteil University (UPEC)", 8],
@@ -182,3 +183,4 @@ map.on('exitFullscreen', function() {
   map.removeControl(legend);
 });
 updateMarkers(false);
+})();
