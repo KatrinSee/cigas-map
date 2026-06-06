@@ -183,4 +183,5 @@ map.on('exitFullscreen', function() {
   map.removeControl(legend);
 });
 updateMarkers(false);
+document.getElementById('map') && (document.getElementById('map').style.display = 'none');
 })();
