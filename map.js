@@ -1,5 +1,5 @@
 const markers = [
-["Chambre de simulation atmosphérique à irradiation naturelle d’Orléans (HELIOS)", "Atmospheric simulation chamber", 47.838, 1.944, "uy77", "https://nflabelling.actris.eu/facility/44", "France", "https://helios-cnrs.org/", "French National Centre for Scientific Research (CNRS)\nUniversity of Orléans", 7],
+["Chambre de simulation atmosphérique à irradiation naturelle d'Orléans (HELIOS)", "Atmospheric simulation chamber", 47.838, 1.944, "uy77", "https://nflabelling.actris.eu/facility/44", "France", "https://helios-cnrs.org/", "French National Centre for Scientific Research (CNRS)\nUniversity of Orléans", 7],
 ["Multiphase Atmospheric Simulation Chamber (CESAM)", "Atmospheric simulation chamber", 48.789, 2.444, "vkyl", "https://nflabelling.actris.eu/facility/43", "France", "https://cesam.cnrs.fr/", "French National Centre for Scientific Research (CNRS)\nParis-Est Créteil University (UPEC)", 8],
 ["Simulation of Atmospheric PHotochemistry In a large Reaction Chamber (SAPHIR)", "Atmospheric simulation chamber", 50.91, 6.41, "7r1t", "https://nflabelling.actris.eu/facility/62", "Germany", "https://www.fz-juelich.de/en/ice/ice-3/scientific-infrastructure/saphir", "Forschungszentrum Jülich (FZJ)", 9],
 ["Atmospheric Chemistry Department Chamber (ACD-C)", "Atmospheric simulation chamber", 51.35, 12.43, "0vtd", "https://nflabelling.actris.eu/facility/60", "Germany", "https://www.tropos.de/en/institute/departments/atmospheric-chemistry/lab-experiments/aerosol-chamber-experiments", "Leibniz Institute for Tropospheric Research (TROPOS)", 10],
@@ -10,7 +10,7 @@ const markers = [
 ["PACS", "Atmospheric simulation chamber", 47.539, 8.229, "qjoi", "https://nflabelling.actris.eu/facility/121", "Switzerland", "https://www.actris.ch/facilities/pacs/", "Paul Scherrer Institute (PSI)", 15],
 ["Aerosol, cluster and trace gas laboratory (Helsinki)", "Laboratory platform", 60.2, 24.967, "", "https://nflabelling.actris.eu/facility/31", "Finland", "", "University of Helsinki (UH)", 17],
 ["MARTISLAB-BE", "Mobile platform", 50.305, 5.998, "", "https://nflabelling.actris.eu/facility/8", "Belgium", "", "Royal Belgian Institute for Space Aeronomy (BIRA)", 18],
-["Mobile Aerosol Laboratory", "Mobile platform", 61.449, 23.856, "", "https://nflabelling.actris.eu/facility/32", "Finland", "", "Tampere University", 19],
+["Mobile Aerosol Laboratory", "Mobile platform", 61.449, 23.856, "", "https://nflabelling.actris.eu/facility/32", "Finland", "https://www.tuni.fi/en/research/atmo-lab-aerosol-and-trace-gas-mobile-laboratory", "Tampere University", 19],
 ["Exploratory platform UG", "Mobile platform", 57.686, 11.961, "", "https://nflabelling.actris.eu/facility/118", "Sweden", "", "University of Gothenburg", 21],
 ["University Innsbruck (UIBK)", "Observational platform", 47.264, 11.383, "", "https://nflabelling.actris.eu/facility/2", "Austria", "", "Universität Innsbruck", 23],
 ["Vielsalm", "Observational platform", 50.27, 5.9, "xp2z", "https://nflabelling.actris.eu/facility/6", "Belgium", "https://www.wallonair.be/en/", "Institut Scientifique de Service Public (ISSeP)\nRoyal Belgian Institute for Space Aeronomy (BIRA)\nUniversity of Liège", 24],
@@ -20,8 +20,8 @@ const markers = [
 ["SMEAR III (Helsinki)", "Observational platform", 60.2, 24.967, "p0ob", "https://nflabelling.actris.eu/facility/24", "Finland", "https://www.atm.helsinki.fi/smear/smear-iii/", "Finnish Meteorological Institute (FMI)\nUniversity of Helsinki (UH)", 29],
 ["SMEAR I (Värriö)", "Observational platform", 67.767, 29.583, "d23p", "https://nflabelling.actris.eu/facility/22", "Finland", "https://www.helsinki.fi/en/research-stations/varrio-subarctic-research-station", "University of Helsinki (UH)", 30],
 ["Pyrenean Platform for Observation of the Atmosphere (P2OA)", "Observational platform", 42.936, 0.142, "gstt", "https://nflabelling.actris.eu/facility/40", "France", "https://p2oa.aeris-data.fr/", "French National Centre for Scientific Research (CNRS)\nUniversité de Toulouse (UT)", 31],
-["Site d’observation atmosphériques Puy de Dôme/ Opme/Cézeaux (COPDD)", "Observational platform", 45.772, 2.965, "do7b", "https://nflabelling.actris.eu/facility/38", "France", "http://wwwobs.univ-bpclermont.fr/atmos/fr/recherches/station_obs.php", "French National Centre for Scientific Research (CNRS)\nUniversity of Clermont Auvergne", 32],
-["Site Instrumental de Recherche par Télédétection Atmosphérique (SIRTA)", "Observational platform", 48.717, 2.207, "k0wb", "https://nflabelling.actris.eu/facility/37", "France", "https://sirta.ipsl.fr/", "Atomic Energy and Alternative Energies Commission (CEA)\nÉcole Polytechnique\nFrench National Centre for Scientific Research (CNRS)\nFrench National Institute for Industrial Environment and Risks (INERIS)\nVersailles Saint-Quentin-en-Yvelines University (UVSQ", 33],
+["Site d'observation atmosphériques Puy de Dôme/ Opme/Cézeaux (COPDD)", "Observational platform", 45.772, 2.965, "do7b", "https://nflabelling.actris.eu/facility/38", "France", "http://wwwobs.univ-bpclermont.fr/atmos/fr/recherches/station_obs.php", "French National Centre for Scientific Research (CNRS)\nUniversity of Clermont Auvergne", 32],
+["Site Instrumental de Recherche par Télédétection Atmosphérique (SIRTA)", "Observational platform", 48.717, 2.207, "k0wb", "https://nflabelling.actris.eu/facility/37", "France", "https://sirta.ipsl.fr/", "Atomic Energy and Alternative Energies Commission (CEA)\nÉcole Polytechnique\nFrench National Centre for Scientific Research (CNRS)\nFrench National Institute for Industrial Environment and Risks (INERIS)\nVersailles Saint-Quentin-en-Yvelines University (UVSQ)", 33],
 ["Cape Verde Atmospheric Observatory", "Observational platform", 16.834, -24.868, "wnsz", "https://nflabelling.actris.eu/facility/55", "Germany", "https://www.tropos.de/en/research/projects-infrastructures-technology/coordinated-observations-and-networks/cvao-cape-verde-atmospheric-observatory", "Leibniz Institute for Tropospheric Research (TROPOS)", 34],
 ["Melpitz Research Station", "Observational platform", 51.525, 12.928, "fhhq", "https://nflabelling.actris.eu/facility/50", "Germany", "https://www.tropos.de/en/research/atmospheric-aerosols/long-term-trends-and-process-analysis/long-term-studies-of-regional-importance-and-air-quality/regional-research-station-melpitz/overview", "Leibniz Institute for Tropospheric Research (TROPOS)", 35],
 ["Meteorological Observatory Hohenpeissenberg (DWD)", "Observational platform", 47.801, 11.01, "rhhz", "https://nflabelling.actris.eu/facility/47", "Germany", "https://www.dwd.de/EN/research/observing_atmosphere/composition_atmosphere/hohenpeissenberg/start_mohp_node.html", "German Meteorological Service (DWD)", 36],
@@ -71,13 +71,13 @@ const circleOptions = {
   weight: 1
 };
 function getColorForFacilityType(type) {
-  if (!type) return '#808080'; //gray
+  if (!type) return '#808080';
   const t = type.toLowerCase();
-  if (t.includes('atmospheric simulation chamber')) return '#FDC59F'; //yellow
-  if (t.includes('mobile platform')) return '#2398AA'; //green
-  if (t.includes('laboratory platform')) return '#F86A71'; //red
-  if (t.includes('observational platform')) return '#2C347F'; //blue
-  if (t.includes('central facility')) return '#808080'; //gray
+  if (t.includes('atmospheric simulation chamber')) return '#FDC59F';
+  if (t.includes('mobile platform')) return '#2398AA';
+  if (t.includes('laboratory platform')) return '#F86A71';
+  if (t.includes('observational platform')) return '#2C347F';
+  if (t.includes('central facility')) return '#808080';
   return '#808080';
 }
 function getFlagURL(countryName) {
@@ -88,70 +88,37 @@ function getFlagURL(countryName) {
     "Spain": "es", "Sweden": "se", "Switzerland": "ch", "United Kingdom": "gb"
   };
   const code = countryCodeMap[countryName];
-  return code ? `https://flagcdn.com/w20/${code}.png` : '';
+  return code ? 'https://flagcdn.com/w20/' + code + '.png' : '';
 }
 function createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID) {
   const flagURL = getFlagURL(country);
   let nfLink = '';
   if (nfURL && nfURL.trim() !== '') {
     let label = typeLabel.toLowerCase().includes("central facility") ? "Central Facility Website" : "National Facility Website";
-    nfLink = '
-<p>
-    🌐 <a href="' + nfURL + '" target="_blank">' + label + '</a>
-</p>
-';
+    nfLink = '<p>🌐 <a href="' + nfURL + '" target="_blank">' + label + '</a></p>';
   }
   let dataLink = '';
   if (dataURL && dataURL.trim() !== '') {
-    dataLink = '
-<p>
-    📊 <a href="https://data.actris.eu/facility/' + dataURL + '" target="_blank">ACTRIS Data Portal</a>
-</p>
-';
+    dataLink = '<p>📊 <a href="https://data.actris.eu/facility/' + dataURL + '" target="_blank">ACTRIS Data Portal</a></p>';
   }
   let labellingLink = '';
   if (labellingURL && labellingURL.trim() !== '') {
-    labellingLink = '
-<p>
-    🔗 <a href="' + labellingURL + '" target="_blank">ACTRIS Labelling Portal</a>
-</p>
-';
+    labellingLink = '<p>🔗 <a href="' + labellingURL + '" target="_blank">ACTRIS Labelling Portal</a></p>';
   }
-  const instFormatted = hostingInst.replace(/\n/g, '<br>
-');
+  const instFormatted = hostingInst.replace(/\n/g, '<br>');
   const flagImg = flagURL ? '<img src="' + flagURL + '" class="flag-icon">' : '';
-  return '
-<div style="font-family: sans-serif; min-width: 220px;">
-    <div style="font-size: 16px; font-weight: bold; color: #2c3e50;">
-        ' + name + '
-    </div>
-    <div style="font-size: 13px; color: #555;">
-        <span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span>
-    </div>
-    <div style="margin: 6px 0;">
-        ' + instFormatted + '<br>
-        ' + flagImg + country + '
-    </div>
-    <hr>
-    <div class="links">
-        ' + nfLink + labellingLink + dataLink + '
-    </div>
-</div>
-';
+  return '<div style="font-family: sans-serif; min-width: 220px;"><div style="font-size: 16px; font-weight: bold; color: #2c3e50;">' + name + '</div><div style="font-size: 13px; color: #555;"><span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span></div><div style="margin: 6px 0;">' + instFormatted + '<br>' + flagImg + country + '</div><hr><div class="links">' + nfLink + labellingLink + dataLink + '</div></div>';
 }
-function createMarker(lng, lat, name, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID, typeLabel, useIcon = false) {
+function createMarker(lng, lat, name, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID, typeLabel, useIcon) {
+  if (useIcon === undefined) useIcon = false;
   const popupContent = createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID);
   const color = getColorForFacilityType(typeLabel);
   let marker;
   if (useIcon) {
-    let icon = color === '#FDC59F' ? chamberIcon :
-               color === '#2398AA' ? mobileIcon :
-               color === '#F86A71' ? labIcon :
-               color === '#2C347F' ? ObsIcon :
-               color === '#808080' ? CentralIcon : null;
-    if (icon) marker = L.marker([lat, lng], {icon}).bindPopup(popupContent);
+    let icon = color === '#FDC59F' ? chamberIcon : color === '#2398AA' ? mobileIcon : color === '#F86A71' ? labIcon : color === '#2C347F' ? ObsIcon : color === '#808080' ? CentralIcon : null;
+    if (icon) marker = L.marker([lat, lng], {icon: icon}).bindPopup(popupContent);
   } else {
-    const options = {...circleOptions, color: color, fillColor: color};
+    const options = {radius: circleOptions.radius, color: color, fillColor: color, fillOpacity: circleOptions.fillOpacity, weight: circleOptions.weight};
     marker = L.circleMarker([lat, lng], options).bindPopup(popupContent);
   }
   if (marker) {
@@ -168,8 +135,8 @@ function updateMarkers(useIcon) {
   MobilePlat.clearLayers();
   ObsPlat.clearLayers();
   CentralFacility.clearLayers();
-  markers.forEach(([name, type, lat, lng, dataURL, labellingURL, country, nfURL, hostingInst, nfObjectID]) => {
-    createMarker(lng, lat, name, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID, type, useIcon);
+  markers.forEach(function(m) {
+    createMarker(m[3], m[2], m[0], m[6], m[5], m[4], m[7], m[8], m[9], m[1], useIcon);
   });
   map.addLayer(chambers);
   map.addLayer(LabPlat);
@@ -177,28 +144,11 @@ function updateMarkers(useIcon) {
   map.addLayer(ObsPlat);
   map.addLayer(CentralFacility);
 }
-const map = L.map('map', {
-  center: [50, 10],
-  zoom: 4,
-  fullscreenControl: true
-});
-const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
-}).addTo(map);
-const osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
-});
-const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 19,
-  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-});
-const baseLayers = {
-  'OpenStreetMap': osm,
-  'OpenStreetMap.HOT': osmHOT,
-  'satellite': satellite
-};
+const map = L.map('map', {center: [50, 10], zoom: 4, fullscreenControl: true});
+const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(map);
+const osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'});
+const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
+const baseLayers = {'OpenStreetMap': osm, 'OpenStreetMap.HOT': osmHOT, 'satellite': satellite};
 const overlays = {
   '<img src="/sites/default/files/inline-images/simulation_chamber_0.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Atmospheric simulation chambers': chambers,
   '<img src="/sites/default/files/inline-images/Laboratory_platform_3.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Laboratory platforms': LabPlat,
@@ -207,31 +157,24 @@ const overlays = {
   '<img src="/sites/default/files/inline-images/Central_facility.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Central facilities': CentralFacility
 };
 const layerControl = L.control.layers(baseLayers, overlays);
-// Legende für Fullscreen-Modus
-const legend = L.control({ position: 'bottomleft' });
-legend.onAdd = function (map) {
+const legend = L.control({position: 'bottomleft'});
+legend.onAdd = function(map) {
   const div = L.DomUtil.create('div', 'legend');
-  div.innerHTML += '<strong>Platform Types</strong><br>
-';
-  div.innerHTML += '<img src="/sites/default/files/inline-images/simulation_chamber_0.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Atmospheric simulation chambers<br>
-';
-  div.innerHTML += '<img src="/sites/default/files/inline-images/Laboratory_platform_3.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Laboratory platforms<br>
-';
-  div.innerHTML += '<img src="/sites/default/files/inline-images/mobile_platform.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Mobile platforms<br>
-';
-  div.innerHTML += '<img src="/sites/default/files/inline-images/observatory_platform_0.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Observational platforms<br>
-';
-  div.innerHTML += '<img src="/sites/default/files/inline-images/Central_facility.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Central facilities<br>
-';
+  div.innerHTML = '<strong>Platform Types</strong><br>';
+  div.innerHTML += '<img src="/sites/default/files/inline-images/simulation_chamber_0.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Atmospheric simulation chambers<br>';
+  div.innerHTML += '<img src="/sites/default/files/inline-images/Laboratory_platform_3.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Laboratory platforms<br>';
+  div.innerHTML += '<img src="/sites/default/files/inline-images/mobile_platform.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Mobile platforms<br>';
+  div.innerHTML += '<img src="/sites/default/files/inline-images/observatory_platform_0.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Observational platforms<br>';
+  div.innerHTML += '<img src="/sites/default/files/inline-images/Central_facility.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Central facilities<br>';
   return div;
 };
-map.on('enterFullscreen', () => {
+map.on('enterFullscreen', function() {
   map.setView([50, 10], 4);
   updateMarkers(true);
   map.addControl(layerControl);
   map.addControl(legend);
 });
-map.on('exitFullscreen', () => {
+map.on('exitFullscreen', function() {
   map.setView([50, 10], 4);
   updateMarkers(false);
   map.removeControl(layerControl);
