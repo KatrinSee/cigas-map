@@ -1,4 +1,4 @@
-const markers = [
+const cigasMarkers = [
 ["Chambre de simulation atmosphérique à irradiation naturelle d'Orléans (HELIOS)", "Atmospheric simulation chamber", 47.838, 1.944, "uy77", "https://nflabelling.actris.eu/facility/44", "France", "https://helios-cnrs.org/", "French National Centre for Scientific Research (CNRS)\nUniversity of Orléans", 7],
 ["Multiphase Atmospheric Simulation Chamber (CESAM)", "Atmospheric simulation chamber", 48.789, 2.444, "vkyl", "https://nflabelling.actris.eu/facility/43", "France", "https://cesam.cnrs.fr/", "French National Centre for Scientific Research (CNRS)\nParis-Est Créteil University (UPEC)", 8],
 ["Simulation of Atmospheric PHotochemistry In a large Reaction Chamber (SAPHIR)", "Atmospheric simulation chamber", 50.91, 6.41, "7r1t", "https://nflabelling.actris.eu/facility/62", "Germany", "https://www.fz-juelich.de/en/ice/ice-3/scientific-infrastructure/saphir", "Forschungszentrum Jülich (FZJ)", 9],
@@ -46,31 +46,31 @@ const markers = [
 ["Institut Mines Télécom Nord Europe (IMT-NE)", "central facility", 50.39, 3.08, "", "", "France", "https://actris.eu/topical-centre/cigas", "Institut Mines Télécom Nord Europe (IMT-NE)", 387],
 ["Eidgenössische Materialprüfungs- und Forschungsanstalt (EMPA)", "central facility", 47.40, 8.61, "", "", "Switzerland", "https://actris.eu/topical-centre/cigas", "Eidgenössische Materialprüfungs- und Forschungsanstalt (EMPA)", 386],
 ["Deutscher Wetterdienst - Hohenpeißenberg (DWD)", "central facility (DWD)", 47.801, 11.01, "", "", "Germany", "https://actris.eu/topical-centre/cigas", "Forschungszentrum Jülich (FZJ)", 385]];
-const NFIcon = L.Icon.extend({
+const cigasNFIcon = L.Icon.extend({
   options: {
     iconSize: [20, 30],
     iconAnchor: [10, 30],
     popupAnchor: [0, -30]
   }
 });
-const chamberIcon = new NFIcon({iconUrl: '/sites/default/files/inline-images/simulation_chamber_0.png'});
-const mobileIcon = new NFIcon({iconUrl: '/sites/default/files/inline-images/mobile_platform.png'});
-const ObsIcon = new NFIcon({iconUrl: '/sites/default/files/inline-images/observatory_platform_0.png'});
-const labIcon = new NFIcon({iconUrl: '/sites/default/files/inline-images/Laboratory_platform_3.png'});
-const CentralIcon = new NFIcon({iconUrl: '/sites/default/files/inline-images/Central_facility.png'});
-const chambers = L.layerGroup();
-const LabPlat = L.layerGroup();
-const MobilePlat = L.layerGroup();
-const ObsPlat = L.layerGroup();
-const CentralFacility = L.layerGroup();
-const circleOptions = {
+const cigasChamberIcon = new cigasNFIcon({iconUrl: '/sites/default/files/inline-images/simulation_chamber_0.png'});
+const cigasMobileIcon = new cigasNFIcon({iconUrl: '/sites/default/files/inline-images/mobile_platform.png'});
+const cigasObsIcon = new cigasNFIcon({iconUrl: '/sites/default/files/inline-images/observatory_platform_0.png'});
+const cigasLabIcon = new cigasNFIcon({iconUrl: '/sites/default/files/inline-images/Laboratory_platform_3.png'});
+const cigasCentralIcon = new cigasNFIcon({iconUrl: '/sites/default/files/inline-images/Central_facility.png'});
+const cigasChambers = L.layerGroup();
+const cigasLabPlat = L.layerGroup();
+const cigasMobilePlat = L.layerGroup();
+const cigasObsPlat = L.layerGroup();
+const cigasCentralFacility = L.layerGroup();
+const cigasCircleOptions = {
   radius: 3,
   color: '#2C347F',
   fillColor: '#2C347F',
   fillOpacity: 1,
   weight: 1
 };
-function getColorForFacilityType(type) {
+function cigasGetColorForFacilityType(type) {
   if (!type) return '#808080';
   const t = type.toLowerCase();
   if (t.includes('atmospheric simulation chamber')) return '#FDC59F';
@@ -80,7 +80,7 @@ function getColorForFacilityType(type) {
   if (t.includes('central facility')) return '#808080';
   return '#808080';
 }
-function getFlagURL(countryName) {
+function cigasGetFlagURL(countryName) {
   const countryCodeMap = {
     "Austria": "at", "Belgium": "be", "Bulgaria": "bg", "Cyprus": "cy", "Czech Republic": "cz",
     "Denmark": "dk", "Finland": "fi", "France": "fr", "Germany": "de", "Greece": "gr",
@@ -90,8 +90,8 @@ function getFlagURL(countryName) {
   const code = countryCodeMap[countryName];
   return code ? 'https://flagcdn.com/w20/' + code + '.png' : '';
 }
-function createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID) {
-  const flagURL = getFlagURL(country);
+function cigasCreatePopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID) {
+  const flagURL = cigasGetFlagURL(country);
   let nfLink = '';
   if (nfURL && nfURL.trim() !== '') {
     let label = typeLabel.toLowerCase().includes("central facility") ? "Central Facility Website" : "National Facility Website";
@@ -107,62 +107,62 @@ function createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfU
   }
   let cigasLink = '';
   if (nfObjectID) {
-    cigasLink = '<p>🔬 <a href="https://cigas-box.fz-juelich.de/instrument/' + nfObjectID + '" target="_blank">CiGas Box</a></p>';
+    cigasLink = '<p>📦 <a href="https://cigas-box.fz-juelich.de/instrument/' + nfObjectID + '" target="_blank">CiGas Box</a></p>';
   }
   const instFormatted = hostingInst.replace(/\n/g, '<br>');
   const flagImg = flagURL ? '<img src="' + flagURL + '" class="flag-icon">' : '';
-  return '<div style="font-family: sans-serif; min-width: 220px;"><div style="font-size: 16px; font-weight: bold; color: #2c3e50;">' + name + '</div><div style="font-size: 13px; color: #555;"><span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span></div><div style="margin: 6px 0;">' + instFormatted + '<br>' + flagImg + country + '</div><hr><div class="links">' + nfLink + labellingLink + dataLink + '</div></div>';
+  return '<div style="font-family: sans-serif; min-width: 220px;"><div style="font-size: 16px; font-weight: bold; color: #2c3e50;">' + name + '</div><div style="font-size: 13px; color: #555;"><span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span></div><div style="margin: 6px 0;">' + instFormatted + '<br>' + flagImg + country + '</div><hr><div class="links">' + nfLink + labellingLink + dataLink + cigasLink + '</div></div>';
 }
-function createMarker(lng, lat, name, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID, typeLabel, useIcon) {
+function cigasCreateMarker(lng, lat, name, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID, typeLabel, useIcon) {
   if (useIcon === undefined) useIcon = false;
-  const popupContent = createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID);
-  const color = getColorForFacilityType(typeLabel);
+  const popupContent = cigasCreatePopupContent(name, typeLabel, country, labellingURL, dataURL, nfURL, hostingInst, nfObjectID);
+  const color = cigasGetColorForFacilityType(typeLabel);
   let marker;
   if (useIcon) {
-    let icon = color === '#FDC59F' ? chamberIcon : color === '#2398AA' ? mobileIcon : color === '#F86A71' ? labIcon : color === '#2C347F' ? ObsIcon : color === '#808080' ? CentralIcon : null;
+    let icon = color === '#FDC59F' ? cigasChamberIcon : color === '#2398AA' ? cigasMobileIcon : color === '#F86A71' ? cigasLabIcon : color === '#2C347F' ? cigasObsIcon : color === '#808080' ? cigasCentralIcon : null;
     if (icon) marker = L.marker([lat, lng], {icon: icon}).bindPopup(popupContent);
   } else {
-    const options = {radius: circleOptions.radius, color: color, fillColor: color, fillOpacity: circleOptions.fillOpacity, weight: circleOptions.weight};
+    const options = {radius: cigasCircleOptions.radius, color: color, fillColor: color, fillOpacity: cigasCircleOptions.fillOpacity, weight: cigasCircleOptions.weight};
     marker = L.circleMarker([lat, lng], options).bindPopup(popupContent);
   }
   if (marker) {
-    if (color === '#FDC59F') chambers.addLayer(marker);
-    else if (color === '#F86A71') LabPlat.addLayer(marker);
-    else if (color === '#2398AA') MobilePlat.addLayer(marker);
-    else if (color === '#2C347F') ObsPlat.addLayer(marker);
-    else if (color === '#808080') CentralFacility.addLayer(marker);
+    if (color === '#FDC59F') cigasChambers.addLayer(marker);
+    else if (color === '#F86A71') cigasLabPlat.addLayer(marker);
+    else if (color === '#2398AA') cigasMobilePlat.addLayer(marker);
+    else if (color === '#2C347F') cigasObsPlat.addLayer(marker);
+    else if (color === '#808080') cigasCentralFacility.addLayer(marker);
   }
 }
-function updateMarkers(useIcon) {
-  chambers.clearLayers();
-  LabPlat.clearLayers();
-  MobilePlat.clearLayers();
-  ObsPlat.clearLayers();
-  CentralFacility.clearLayers();
-  markers.forEach(function(m) {
-    createMarker(m[3], m[2], m[0], m[6], m[5], m[4], m[7], m[8], m[9], m[1], useIcon);
+function cigasUpdateMarkers(useIcon) {
+  cigasChambers.clearLayers();
+  cigasLabPlat.clearLayers();
+  cigasMobilePlat.clearLayers();
+  cigasObsPlat.clearLayers();
+  cigasCentralFacility.clearLayers();
+  cigasMarkers.forEach(function(m) {
+    cigasCreateMarker(m[3], m[2], m[0], m[6], m[5], m[4], m[7], m[8], m[9], m[1], useIcon);
   });
-  map.addLayer(chambers);
-  map.addLayer(LabPlat);
-  map.addLayer(MobilePlat);
-  map.addLayer(ObsPlat);
-  map.addLayer(CentralFacility);
+  cigasMap.addLayer(cigasChambers);
+  cigasMap.addLayer(cigasLabPlat);
+  cigasMap.addLayer(cigasMobilePlat);
+  cigasMap.addLayer(cigasObsPlat);
+  cigasMap.addLayer(cigasCentralFacility);
 }
-const map = L.map('map', {center: [50, 10], zoom: 4, fullscreenControl: true});
-const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(map);
-const osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'});
-const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
-const baseLayers = {'OpenStreetMap': osm, 'OpenStreetMap.HOT': osmHOT, 'satellite': satellite};
-const overlays = {
-  '<img src="/sites/default/files/inline-images/simulation_chamber_0.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Atmospheric simulation chambers': chambers,
-  '<img src="/sites/default/files/inline-images/Laboratory_platform_3.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Laboratory platforms': LabPlat,
-  '<img src="/sites/default/files/inline-images/mobile_platform.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Mobile platforms': MobilePlat,
-  '<img src="/sites/default/files/inline-images/observatory_platform_0.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Observational platforms': ObsPlat,
-  '<img src="/sites/default/files/inline-images/Central_facility.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Central facilities': CentralFacility
+const cigasMap = L.map('map', {center: [50, 10], zoom: 4, fullscreenControl: true});
+const cigasOsm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(cigasMap);
+const cigasOsmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'});
+const cigasSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
+const cigasBaseLayers = {'OpenStreetMap': cigasOsm, 'OpenStreetMap.HOT': cigasOsmHOT, 'satellite': cigasSatellite};
+const cigasOverlays = {
+  '<img src="/sites/default/files/inline-images/simulation_chamber_0.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Atmospheric simulation chambers': cigasChambers,
+  '<img src="/sites/default/files/inline-images/Laboratory_platform_3.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Laboratory platforms': cigasLabPlat,
+  '<img src="/sites/default/files/inline-images/mobile_platform.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Mobile platforms': cigasMobilePlat,
+  '<img src="/sites/default/files/inline-images/observatory_platform_0.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Observational platforms': cigasObsPlat,
+  '<img src="/sites/default/files/inline-images/Central_facility.png" style="width: 16px; height: 24px; vertical-align: middle; margin-right: 5px;"> Central facilities': cigasCentralFacility
 };
-const layerControl = L.control.layers(baseLayers, overlays);
-const legend = L.control({position: 'bottomleft'});
-legend.onAdd = function(map) {
+const cigasLayerControl = L.control.layers(cigasBaseLayers, cigasOverlays);
+const cigasLegend = L.control({position: 'bottomleft'});
+cigasLegend.onAdd = function(cigasMap) {
   const div = L.DomUtil.create('div', 'legend');
   div.innerHTML = '<strong>Platform Types</strong><br>';
   div.innerHTML += '<img src="/sites/default/files/inline-images/simulation_chamber_0.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Atmospheric simulation chambers<br>';
@@ -172,16 +172,16 @@ legend.onAdd = function(map) {
   div.innerHTML += '<img src="/sites/default/files/inline-images/Central_facility.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Central facilities<br>';
   return div;
 };
-map.on('enterFullscreen', function() {
-  map.setView([50, 10], 4);
-  updateMarkers(true);
-  map.addControl(layerControl);
-  map.addControl(legend);
+cigasMap.on('enterFullscreen', function() {
+  cigasMap.setView([50, 10], 4);
+  cigasUpdateMarkers(true);
+  cigasMap.addControl(cigasLayerControl);
+  cigasMap.addControl(cigasLegend);
 });
-map.on('exitFullscreen', function() {
-  map.setView([50, 10], 4);
-  updateMarkers(false);
-  map.removeControl(layerControl);
-  map.removeControl(legend);
+cigasMap.on('exitFullscreen', function() {
+  cigasMap.setView([50, 10], 4);
+  cigasUpdateMarkers(false);
+  cigasMap.removeControl(cigasLayerControl);
+  cigasMap.removeControl(cigasLegend);
 });
-updateMarkers(false);
+cigasUpdateMarkers(false);
