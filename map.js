@@ -107,7 +107,7 @@ function cigasCreatePopupContent(name, typeLabel, country, labellingURL, dataURL
   }
   let cigasLink = '';
   if (nfObjectID) {
-    cigasLink = '<p>📦 <a href="https://cigas-box.fz-juelich.de/instrument/' + nfObjectID + '" target="_blank">CiGas Box</a></p>';
+    cigasLink = '<p>📦 <a href="https://cigas-box.fz-juelich.de/facility/' + nfObjectID + '" target="_blank">CiGas Box</a></p>';
   }
   const instFormatted = hostingInst.replace(/\n/g, '<br>');
   const flagImg = flagURL ? '<img src="' + flagURL + '" class="flag-icon">' : '';
