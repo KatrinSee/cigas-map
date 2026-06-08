@@ -148,7 +148,7 @@ function cigasUpdateMarkers(useIcon) {
   cigasMap.addLayer(cigasObsPlat);
   cigasMap.addLayer(cigasCentralFacility);
 }
-const cigasMap = L.map('map', {center: [50, 10], zoom: 4, fullscreenControl: true});
+const cigasMap = L.map('cigas-map', {center: [50, 10], zoom: 4, fullscreenControl: true});
 const cigasOsm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(cigasMap);
 const cigasOsmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'});
 const cigasSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
