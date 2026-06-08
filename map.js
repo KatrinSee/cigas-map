@@ -105,6 +105,10 @@ function createPopupContent(name, typeLabel, country, labellingURL, dataURL, nfU
   if (labellingURL && labellingURL.trim() !== '') {
     labellingLink = '<p>🔗 <a href="' + labellingURL + '" target="_blank">ACTRIS Labelling Portal</a></p>';
   }
+  let cigasLink = '';
+  if (nfObjectID) {
+    cigasLink = '<p>🔬 <a href="https://cigas-box.fz-juelich.de/instrument/' + nfObjectID + '" target="_blank">CiGas Box</a></p>';
+  }
   const instFormatted = hostingInst.replace(/\n/g, '<br>');
   const flagImg = flagURL ? '<img src="' + flagURL + '" class="flag-icon">' : '';
   return '<div style="font-family: sans-serif; min-width: 220px;"><div style="font-size: 16px; font-weight: bold; color: #2c3e50;">' + name + '</div><div style="font-size: 13px; color: #555;"><span style="color: grey; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-style: italic">' + typeLabel + '</span></div><div style="margin: 6px 0;">' + instFormatted + '<br>' + flagImg + country + '</div><hr><div class="links">' + nfLink + labellingLink + dataLink + '</div></div>';
