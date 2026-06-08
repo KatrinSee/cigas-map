@@ -142,14 +142,14 @@ function cigasUpdateMarkers(useIcon) {
   cigasMarkers.forEach(function(m) {
     cigasCreateMarker(m[3], m[2], m[0], m[6], m[5], m[4], m[7], m[8], m[9], m[1], useIcon);
   });
-  cigasMap.addLayer(cigasChambers);
-  cigasMap.addLayer(cigasLabPlat);
-  cigasMap.addLayer(cigasMobilePlat);
-  cigasMap.addLayer(cigasObsPlat);
-  cigasMap.addLayer(cigasCentralFacility);
+  map.addLayer(cigasChambers);
+  map.addLayer(cigasLabPlat);
+  map.addLayer(cigasMobilePlat);
+  map.addLayer(cigasObsPlat);
+  map.addLayer(cigasCentralFacility);
 }
-const cigasMap = L.map('cigas-map', {center: [50, 10], zoom: 4, fullscreenControl: true});
-const cigasOsm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(cigasMap);
+const map = L.map('map', {center: [50, 10], zoom: 4, fullscreenControl: true});
+const cigasOsm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a>'}).addTo(map);
 const cigasOsmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'});
 const cigasSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
 const cigasBaseLayers = {'OpenStreetMap': cigasOsm, 'OpenStreetMap.HOT': cigasOsmHOT, 'satellite': cigasSatellite};
@@ -162,7 +162,7 @@ const cigasOverlays = {
 };
 const cigasLayerControl = L.control.layers(cigasBaseLayers, cigasOverlays);
 const cigasLegend = L.control({position: 'bottomleft'});
-cigasLegend.onAdd = function(cigasMap) {
+cigasLegend.onAdd = function(map) {
   const div = L.DomUtil.create('div', 'legend');
   div.innerHTML = '<strong>Platform Types</strong><br>';
   div.innerHTML += '<img src="/sites/default/files/inline-images/simulation_chamber_0.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Atmospheric simulation chambers<br>';
@@ -172,16 +172,16 @@ cigasLegend.onAdd = function(cigasMap) {
   div.innerHTML += '<img src="/sites/default/files/inline-images/Central_facility.png" style="width: 20px; height: 30px; vertical-align: middle; margin-right: 5px;"> Central facilities<br>';
   return div;
 };
-cigasMap.on('enterFullscreen', function() {
-  cigasMap.setView([50, 10], 4);
+map.on('enterFullscreen', function() {
+  map.setView([50, 10], 4);
   cigasUpdateMarkers(true);
-  cigasMap.addControl(cigasLayerControl);
-  cigasMap.addControl(cigasLegend);
+  map.addControl(cigasLayerControl);
+  map.addControl(cigasLegend);
 });
-cigasMap.on('exitFullscreen', function() {
-  cigasMap.setView([50, 10], 4);
+map.on('exitFullscreen', function() {
+  map.setView([50, 10], 4);
   cigasUpdateMarkers(false);
-  cigasMap.removeControl(cigasLayerControl);
-  cigasMap.removeControl(cigasLegend);
+  map.removeControl(cigasLayerControl);
+  map.removeControl(cigasLegend);
 });
 cigasUpdateMarkers(false);
